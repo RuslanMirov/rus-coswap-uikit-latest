@@ -7,7 +7,7 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <button
-        class="sc-bdfBwQ bRbThI"
+        class="sc-bdvvaa fNdKHQ"
         scale="md"
       >
         Submit
