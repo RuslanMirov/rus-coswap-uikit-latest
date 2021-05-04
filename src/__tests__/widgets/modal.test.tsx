@@ -12,16 +12,16 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="sc-iCfLBT juSVwv"
+        class="sc-gKsewC kzlzNR"
       >
         <div
-          class="sc-furvIG ZrqBp"
+          class="sc-iBPRYJ ieMkRo"
         >
           <div
-            class="sc-dkPtyc sc-hKwCoD sc-pVTma eBJkWD bicEMn bJKlWt"
+            class="sc-dlfnbm sc-fubCfw fcyuqz kApDsK"
           >
             <h2
-              class="sc-bdvvaa sc-gsDJrp XbzBn ktrawH"
+              class="sc-bdfBwQ sc-gsTCUz gWEhOj euWWbB"
               color="text"
             >
               Title
@@ -29,11 +29,11 @@ it("renders correctly", () => {
           </div>
           <button
             aria-label="Close the dialog"
-            class="sc-jRQAMF cXnYpd sc-gKckTs pmGyv"
-            scale="md"
+            class="sc-eCssSg dHcAeg sc-jSgupP gPZlLR"
+            type="button"
           >
             <svg
-              class="sc-eCImvq dhYPog"
+              class="sc-hKgILt SJlke"
               color="primary"
               viewBox="0 0 24 24"
               width="20px"
@@ -46,7 +46,7 @@ it("renders correctly", () => {
           </button>
         </div>
         <div
-          class="sc-dkPtyc sc-hKwCoD cJejIR kLzQlr"
+          class="sc-dlfnbm ggIFKV"
         >
           body
         </div>

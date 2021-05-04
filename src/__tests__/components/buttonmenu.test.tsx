@@ -7,7 +7,7 @@ const handleClick = jest.fn();
 
 it("renders correctly", () => {
   const { asFragment } = renderWithTheme(
-    <ButtonMenu activeIndex={0} onItemClick={handleClick}>
+    <ButtonMenu activeIndex={0} onClick={handleClick}>
       <ButtonMenuItem>Item 1</ButtonMenuItem>
       <ButtonMenuItem>Item 2</ButtonMenuItem>
     </ButtonMenu>
@@ -15,17 +15,17 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="sc-bdvvaa kiJEPi"
+        class="sc-bdfBwQ ixBoaC"
       >
         <button
-          class="sc-gsDJrp kMVpfm"
-          scale="md"
+          class="sc-gsTCUz ihLwNu"
+          type="button"
         >
           Item 1
         </button>
         <button
-          class="sc-gsDJrp eipLoR sc-dkPtyc cqNYfE"
-          scale="md"
+          class="sc-gsTCUz bdckoq sc-dlfnbm cPEMfq"
+          type="button"
         >
           Item 2
         </button>

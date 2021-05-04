@@ -1,17 +1,15 @@
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { MENU_ENTRY_HEIGHT } from "../config";
-import { LinkLabel, MenuEntry } from "./MenuEntry";
-import { PushedProps } from "../types";
-import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../../components/Svg";
+import { MENU_ENTRY_HEIGHT } from "./config";
+import { MenuEntry, LinkLabel } from "./MenuEntry";
+import { PushedProps } from "./types";
+import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../components/Svg";
 
 interface Props extends PushedProps {
   label: string;
   icon: React.ReactElement;
   initialOpenState?: boolean;
   className?: string;
-  children: ReactNode;
-  isActive?: boolean;
 }
 
 const Container = styled.div`
@@ -27,7 +25,7 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   overflow: hidden;
   border-color: ${({ isOpen, isPushed }) => (isOpen && isPushed ? "rgba(133, 133, 133, 0.1)" : "transparent")};
   border-style: solid;
-  border-width: 1px 0;
+  border-width: 1px;
 `;
 
 const Accordion: React.FC<Props> = ({
@@ -38,7 +36,6 @@ const Accordion: React.FC<Props> = ({
   initialOpenState = false,
   children,
   className,
-  isActive,
 }) => {
   const [isOpen, setIsOpen] = useState(initialOpenState);
 
@@ -53,7 +50,7 @@ const Accordion: React.FC<Props> = ({
 
   return (
     <Container>
-      <MenuEntry onClick={handleClick} className={className} isActive={isActive}>
+      <MenuEntry onClick={handleClick} className={className}>
         {icon}
         <LinkLabel isPushed={isPushed}>{label}</LinkLabel>
         {isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
@@ -69,4 +66,4 @@ const Accordion: React.FC<Props> = ({
   );
 };
 
-export default React.memo(Accordion, (prev, next) => prev.isPushed === next.isPushed);
+export default Accordion;

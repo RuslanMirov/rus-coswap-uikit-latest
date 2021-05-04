@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
-import Flex from "../../components/Box/Flex";
+import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
-import Logo from "./components/Logo";
-import Panel from "./components/Panel";
-import UserBlock from "./components/UserBlock";
+import Logo from "./Logo";
+import Panel from "./Panel";
+import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import Avatar from "./Avatar";
 
 const Wrapper = styled.div`
   position: relative;
@@ -116,6 +116,12 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
+        <Logo
+          isPushed={isPushed}
+          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+          isDark={isDark}
+          href={homeLink?.href ?? "/"}
+        />
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}

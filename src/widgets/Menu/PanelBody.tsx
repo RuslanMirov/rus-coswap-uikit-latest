@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import { SvgProps } from "../../../components/Svg";
-import * as IconModule from "../icons";
+import { SvgProps } from "../../components/Svg";
+import * as IconModule from "./icons";
 import Accordion from "./Accordion";
 import { MenuEntry, LinkLabel } from "./MenuEntry";
 import MenuLink from "./MenuLink";
-import { PanelProps, PushedProps } from "../types";
+import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
@@ -48,7 +48,6 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               label={entry.label}
               initialOpenState={initialOpenState}
               className={calloutClass}
-              isActive={entry.items.some((item) => item.href === location.pathname)}
             >
               {isPushed &&
                 entry.items.map((item) => (

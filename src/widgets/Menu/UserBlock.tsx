@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "../../../components/Button/Button";
-import { useWalletModal } from "../../WalletModal";
-import { Login } from "../../WalletModal/types";
+import Button from "../../components/Button/Button";
+import { useWalletModal } from "../WalletModal";
+import { Login } from "../WalletModal/types";
 
 interface Props {
   account?: string;
@@ -16,7 +16,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
     <div>
       {account ? (
         <Button
-          scale="sm"
+          size="sm"
           variant="tertiary"
           onClick={() => {
             onPresentAccountModal();
@@ -26,7 +26,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
         </Button>
       ) : (
         <Button
-          scale="sm"
+          size="sm"
           onClick={() => {
             onPresentConnectModal();
           }}
@@ -38,4 +38,4 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
   );
 };
 
-export default React.memo(UserBlock, (prevProps, nextProps) => prevProps.account === nextProps.account);
+export default UserBlock;
